@@ -40,7 +40,7 @@
 ## 所需设备
 
 ### 摄像头
-
+- [海康威视 DS-2XS6A25-ISGL/CH20S40](https://item.taobao.com/item.htm?from=cart&id=743196454162&skuId=5127299961563&spm=a1z0d.6639537%2F202410.item.d743196454162.5edb7484cQCDbx)
 ### 转发服务器
 
 ### 数据处理服务器
