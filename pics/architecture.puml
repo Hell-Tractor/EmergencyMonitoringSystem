@@ -1,0 +1,43 @@
+component ImageProcessing {
+  component Camera
+
+  component ForwardServer as fs
+
+  Camera <--> fs : USB
+
+  component ProcessingServerArray {
+    component ProcessingServer as ps_main << main >>
+    component ProcessingServer as ps_backup1 << backup >>
+    component ProcessingServer as ps_backup2 << backup >>
+  }
+
+
+  fs <--> ps_main : cable
+  fs <--> ps_backup1 : cable
+  fs <--> ps_backup2 : cable
+}
+
+component DataTransfer {
+    component "WiFi Repeater" as re1
+    component "WiFi Repeater" as re2
+    component "WiFi Repeater" as re3
+    component "WiFi Repeater" as re4
+
+    re1 <.d.> re2
+    re1 <.d.> re3
+    re2 <.d.> re4
+    re3 <.d.> re4
+}
+
+ps_main ..> re1 : WiFi
+ps_backup1 ..> re1 : WiFi
+ps_backup2 ..> re1 : WiFi
+
+component Display {
+    component Screen
+    interface WiFi
+
+    Screen - WiFi
+}
+
+re4 ..> WiFi
