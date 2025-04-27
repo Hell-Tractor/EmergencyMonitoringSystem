@@ -42,7 +42,8 @@
 ### 摄像头
 - [海康威视 DS-2XS6A25-ISGL/CH20S40（￥4315）](https://item.taobao.com/item.htm?from=cart&id=743196454162&skuId=5127299961563&spm=a1z0d.6639537%2F202410.item.d743196454162.5edb7484cQCDbx)
 - [熙晟微摄像头 18_U3_K2MP， 18_U2_K2MP（18倍光学变焦彩色摄像头USB3.0接口输出720P120帧）（￥700）](https://item.taobao.com/item.htm?from=cart&id=811554043988&skuId=5675817355281&spm=a1z0d.6639537%2F202410.item.d811554043988.7d017484oYLGmO)
-- [锐尔威视 RER-USBFHD01M 8mm版（不可变焦）（￥274.4）] (https://item.taobao.com/item.htm?from=cart&id=662245508294&skuId=4954748203220&spm=a1z0d.6639537%2F202410.item.d662245508294.c4877484LHLI4i)
+- [锐尔威视 RER-USBFHD01M 8mm版（不可变焦）（￥274.4）](https://item.taobao.com/item.htm?from=cart&id=662245508294&skuId=4954748203220&spm=a1z0d.6639537%2F202410.item.d662245508294.c4877484LHLI4i)
+
 ### 转发服务器
 
 ### 数据处理服务器
