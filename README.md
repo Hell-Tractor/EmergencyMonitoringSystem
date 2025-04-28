@@ -70,14 +70,25 @@
 </div>
 
 ### 转发服务器
+
 - [鲁班猫2](https://detail.tmall.com/item.htm?id=694035121512&pisk=gugISjOZg9XIlI4RNkAaG7RjixaSRC84v_N-ibQFwyUpyaMnGJ7ETbF-PYkTzup384MseY_rY2zU2UeaNgCL2aLT6WVVeu3zU41n5x_P8pxnwaazyKJ2uElHtz4J3nb8oIW3MSWJz8eL6yVPqCxutElnt8fCeIo9u_gh6JXR28H8WlFbOzQRJ7d6WS2OJ7QLyRd_IRFdJwIpWPFbw8B-e7LT67VlvWE8vNUTNRe8yzH-6CNzB8huJsNWAJcBtIre5cb8eXe1ya3BrkwjOg75PVNLAfGLCcoZ5WZQHueLIPgKQb3E-lxNjzcZcYi-EnSgRbnLJSlHRNax9cu7_4RPVJhZ5f3Qxs74A0F7DzE1wah_-JEsRrLAC5mtT03nd__8t2u4V-q6waqzWqrxDv1kifULwYqmzKb3pbhmomzX7MUx10HjVgyfu-i5Mg1_maN_3CO1qgYJsQ0NXRm88kFgOlR619nuv5V_3CO1qgqLsWww1C6Kq&skuId=5629028363502&spm=a1z10.5-b-s.w4004-25031601900.2.60d31514TFHHbW)
+
 ### 数据处理服务器
+
 - [鲁班猫4](https://detail.tmall.com/item.htm?id=732375324313&pisk=g7TKR_iMmADnb2YdsBogqRYTTJhiicAF5pRbrTX3Vdp9tKpuxwXHyhd2BX7kEQ6JedXw-XWoT8pJwBICOy6B1C1Fw_NCFQNRNdbC4HXlKTQJaKhinq0DTB7P5xDmoe394dbCO6aCFb11i_cGOANbw-bPPxD8jzsEkaJBvR2YAl11Q_C7d_951N1FC6ZCPL61fs17Ra9WFN_1TsCQF_1W1P6Ngy15dya1C_CbR66BFNGOaO65PM9W1AOneONCEzKVxIylacx8PzTO9GiM9O1dTbfhv5OdCzMX-6UVhB6TPz6A1SbD6BDLuCbeuKCDKVapHI8wB19jyAQyQ395wdg4Ew-DLES9Kma61NWNcOTbdk1AJ9IXRGP8RCsWXFQHRYr2sCBCDNxibvjlJpKV3MiZQLdOKLTdfJHGEnAMRGpjIPpP2nRlwp3LRKszOEYY7I2cH_qI6fEz4M1ZHxfyYb4X3mfOnX384uSZ_1Bm6fEz4M1N6tcKwurPbf5..&skuId=5253458654394&spm=a1z10.5-b-s.w4004-25031601900.6.4f003ca94scd9X)
+
 ### WiFi中继器
 
 - [腾达EM3](https://e.tb.cn/h.6jnnBQONlGUJeiK?tk=uDqSVXQgTgA)
 
-### 显示屏
+### 显示设备
 
-- [CFORCE 15.6寸无线显示屏](https://e.tb.cn/h.6jnqbwEHyEvlHFH?tk=q4D3VXQ7Ako)
-- [LED显示屏阵列定制](https://e.tb.cn/h.6jj1kAk0qKPEU3k?tk=FyprVXQ9Xtn)
+- [小米Redmi Pad SE 6+128GB](https://e.tb.cn/h.6lJ6I7HOflc4QGb?tk=97iyVes8TlP)
+
+<!-- - [CFORCE 15.6寸无线显示屏](https://e.tb.cn/h.6jnqbwEHyEvlHFH?tk=q4D3VXQ7Ako) -->
+<!-- - [LED显示屏阵列定制](https://e.tb.cn/h.6jj1kAk0qKPEU3k?tk=FyprVXQ9Xtn) -->
+
+### 其他设备
+
+- [绿联CM631交换机](https://e.tb.cn/h.6lJ8ZAoktABBMdv?tk=wYsWVeslQEF)
+- [小米路由器AX3000T](https://e.tb.cn/h.6lBVs2XaJZnyVQF?tk=QRtxVesI4Ee)
