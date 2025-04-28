@@ -40,9 +40,32 @@
 ## 所需设备
 
 ### 摄像头
-- [海康威视 DS-2XS6A25-ISGL/CH20S40（￥4315）](https://item.taobao.com/item.htm?from=cart&id=743196454162&skuId=5127299961563&spm=a1z0d.6639537%2F202410.item.d743196454162.5edb7484cQCDbx)
-- [熙晟微摄像头 18_U3_K2MP， 18_U2_K2MP（18倍光学变焦彩色摄像头USB3.0接口输出720P120帧）（￥700）](https://item.taobao.com/item.htm?from=cart&id=811554043988&skuId=5675817355281&spm=a1z0d.6639537%2F202410.item.d811554043988.7d017484oYLGmO)
-- [锐尔威视 RER-USBFHD01M 8mm版（不可变焦）（￥274.4）](https://item.taobao.com/item.htm?from=cart&id=662245508294&skuId=4954748203220&spm=a1z0d.6639537%2F202410.item.d662245508294.c4877484LHLI4i)
+
+#### 1. 海康威视 DS-2XS6A25-ISGL/CH40S80（￥4315）
+[产品链接](https://item.taobao.com/item.htm?from=cart&id=743196454162&skuId=5127299961563&spm=a1z0d.6639537%2F202410.item.d743196454162.5edb7484cQCDbx)
+
+<div align="center">
+  <img src="./pics/4.png" alt="海康威视摄像头外观" width="45%"/>
+  <img src="./pics/para_info.png" alt="海康威视参数信息" width="45%"/>
+</div>
+
+---
+
+#### 2. 熙晟微摄像头 18_U3_K2MP，18_U2_K2MP（￥700）
+[产品链接](https://item.taobao.com/item.htm?from=cart&id=811554043988&skuId=5675817355281&spm=a1z0d.6639537%2F202410.item.d811554043988.7d017484oYLGmO)
+
+<div align="center">
+  <img src="./pics/zoom_camera.png" alt="熙晟微变焦摄像头" width="60%"/>
+</div>
+
+---
+
+#### 3. 锐尔威视 RER-USBFHD01M 8mm版（￥274.4）
+[产品链接](https://item.taobao.com/item.htm?from=cart&id=662245508294&skuId=4954748203220&spm=a1z0d.6639537%2F202410.item.d662245508294.c4877484LHLI4i)
+
+<div align="center">
+  <img src="./pics/ordi_camera.png" alt="锐尔威视普通摄像头" width="60%"/>
+</div>
 
 ### 转发服务器
 - [鲁班猫2](https://detail.tmall.com/item.htm?id=694035121512&pisk=gugISjOZg9XIlI4RNkAaG7RjixaSRC84v_N-ibQFwyUpyaMnGJ7ETbF-PYkTzup384MseY_rY2zU2UeaNgCL2aLT6WVVeu3zU41n5x_P8pxnwaazyKJ2uElHtz4J3nb8oIW3MSWJz8eL6yVPqCxutElnt8fCeIo9u_gh6JXR28H8WlFbOzQRJ7d6WS2OJ7QLyRd_IRFdJwIpWPFbw8B-e7LT67VlvWE8vNUTNRe8yzH-6CNzB8huJsNWAJcBtIre5cb8eXe1ya3BrkwjOg75PVNLAfGLCcoZ5WZQHueLIPgKQb3E-lxNjzcZcYi-EnSgRbnLJSlHRNax9cu7_4RPVJhZ5f3Qxs74A0F7DzE1wah_-JEsRrLAC5mtT03nd__8t2u4V-q6waqzWqrxDv1kifULwYqmzKb3pbhmomzX7MUx10HjVgyfu-i5Mg1_maN_3CO1qgYJsQ0NXRm88kFgOlR619nuv5V_3CO1qgqLsWww1C6Kq&skuId=5629028363502&spm=a1z10.5-b-s.w4004-25031601900.2.60d31514TFHHbW)
