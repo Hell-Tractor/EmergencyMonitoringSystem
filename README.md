@@ -55,7 +55,8 @@
 [产品链接](https://item.taobao.com/item.htm?from=cart&id=811554043988&skuId=5675817355281&spm=a1z0d.6639537%2F202410.item.d811554043988.7d017484oYLGmO)
 
 <div align="center">
-  <img src="./pics/zoom_camera.png" alt="熙晟微变焦摄像头" width="60%"/>
+  <img src="./pics/zoom_camera.png" alt="熙晟微变焦摄像头" width="45%"/>
+  <img src="./pics/zoom_info.png" alt="熙晟参数信息" width="45%"/>
 </div>
 
 ---
@@ -64,7 +65,8 @@
 [产品链接](https://item.taobao.com/item.htm?from=cart&id=662245508294&skuId=4954748203220&spm=a1z0d.6639537%2F202410.item.d662245508294.c4877484LHLI4i)
 
 <div align="center">
-  <img src="./pics/ordi_camera.png" alt="锐尔威视普通摄像头" width="60%"/>
+  <img src="./pics/ordi_camera.png" alt="锐尔威视普通摄像头" width="45%"/>
+  <img src="./pics/ordi_info.png" alt="锐尔威视参数信息" width="45%"/>
 </div>
 
 ### 转发服务器
