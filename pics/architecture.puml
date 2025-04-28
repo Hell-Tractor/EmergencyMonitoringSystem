@@ -1,27 +1,37 @@
-component ImageProcessing {
-  component Camera
+component "面向视觉感知与智能图像处理的高可靠性计算机集群" as processModule {
+  component "摄像机" as Camera
 
-  component ForwardServer as fs
+  component "转发服务器" as fs
 
-  Camera <--> fs : USB
+  Camera <-r-> fs : USB
 
-  component ProcessingServerArray {
-    component ProcessingServer as ps_main << main >>
-    component ProcessingServer as ps_backup1 << backup >>
-    component ProcessingServer as ps_backup2 << backup >>
+  component "数据处理服务器阵列" {
+    component "数据处理服务器" as ps_main << main >>
+    component "数据处理服务器" as ps_backup1 << backup >>
+    component "数据处理服务器" as ps_backup2 << backup >>
   }
 
+  interface "交换机" as router
+  fs <-u-> router : cable
 
-  fs <--> ps_main : cable
-  fs <--> ps_backup1 : cable
-  fs <--> ps_backup2 : cable
+  router <-u-> ps_main : cable
+  router <-u-> ps_backup1 : cable
+  router <-u-> ps_backup2 : cable
 }
 
-component DataTransfer {
-    component "WiFi Repeater" as re1
-    component "WiFi Repeater" as re2
-    component "WiFi Repeater" as re3
-    component "WiFi Repeater" as re4
+note right of processModule
+摄像机：海康威视 DS-2XS6A25-ISGL/CH40S80 * 1，
+        熙晟微摄像头 18_U3_K2MP，18_U2_K2MP * 4
+转发服务器：鲁班猫2
+数据处理服务器：鲁班猫4
+交换机：绿联CM631交换机
+end note
+
+component "基于野外远距离可靠通信的中继转发扩展模块" as transferModule {
+    component "无线网络扩展器" as re1
+    component "无线网络扩展器" as re2
+    component "无线网络扩展器" as re3
+    component "无线网络扩展器" as re4
 
     re1 <.d.> re2
     re1 <.d.> re3
@@ -29,15 +39,18 @@ component DataTransfer {
     re3 <.d.> re4
 }
 
-ps_main ..> re1 : WiFi
-ps_backup1 ..> re1 : WiFi
-ps_backup2 ..> re1 : WiFi
+fs <.d.> re1
 
-component Display {
-    component Screen
+component "跨平台可控制的信息显示系统" as displayModule {
+    component "显示设备" as Screen
     interface WiFi
 
     Screen - WiFi
 }
 
 re4 ..> WiFi
+
+note right of displayModule
+显示设备：小米Redmi Pad SE 6+128GB
+路由器：小米路由器AX3000T
+end note
