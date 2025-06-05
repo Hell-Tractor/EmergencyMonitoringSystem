@@ -1,0 +1,12 @@
+[package]
+name = "data-forward-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4.11.0"
+libc = "0.2.172"
+thiserror = "2.0.12"
+tracing = "0.1.41"
+tracing-appender = "0.2.3"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter", "fmt", "json"] }
