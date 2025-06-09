@@ -6,9 +6,15 @@ pub enum Error {
     IndexOutOfBounds(String, usize, usize),
     #[error("Failed to open camera `{0}`. Error code: {1}.")]
     OpenCameraFailed(String, i32),
+    #[error("Failed to play camera. Error code: {0}.")]
+    PlayCameraFailed(i32),
+    #[error("Failed to stop camera. Error code: {0}.")]
+    StopCameraFailed(i32),
+    #[error("Failed to grab frame from camera. Error code: {0}.")]
+    GrabFrameFailed(i32),
 }
 
-type Result<T> = std::result::Result<T, Error>;
+pub type Result<T> = std::result::Result<T, Error>;
 
 pub struct ClosedCamera {
     pub info: DevInfo,
@@ -16,10 +22,12 @@ pub struct ClosedCamera {
 
 pub struct OpenedCamera {
     pub info: DevInfo,
+    video_size: u32,
 }
 
 pub struct PlayingCamera {
     pub info: DevInfo,
+    video_size: u32,
 }
 
 impl ClosedCamera {
@@ -43,26 +51,66 @@ impl ClosedCamera {
             adapter::free_c_str(dev_name_ptr);
         }
 
-        return Ok(OpenedCamera {
+        Ok(OpenedCamera {
             info: self.info,
-        });
+            video_size: w * h * 2,
+        })
     }
 }
 
 impl OpenedCamera {
     pub fn close(self) -> ClosedCamera {
-        todo!()
+        unsafe {
+            api::cam_close(api::MAIN_DEV);
+        }
+        ClosedCamera { info: self.info }
     }
-    pub fn play(self) -> PlayingCamera {
-        todo!()
+    pub fn play(self) -> Result<PlayingCamera> {
+        unsafe {
+            let result = api::cam_play(api::MAIN_DEV);
+            if result < 0 {
+                return Err(Error::PlayCameraFailed(result));
+            }
+        }
+
+        Ok(PlayingCamera {
+            info: self.info,
+            video_size: self.video_size,
+        })
     }
 }
 
 impl PlayingCamera {
-    pub fn stop(self) -> OpenedCamera {
-        todo!()
+    pub fn stop(self) -> Result<OpenedCamera> {
+        unsafe {
+            let result = api::cam_play(api::MAIN_DEV);
+            if result < 0 {
+                return Err(Error::StopCameraFailed(result));
+            }
+        }
+        Ok(OpenedCamera {
+            info: self.info,
+            video_size: self.video_size,
+        })
     }
-    pub fn close(self) -> ClosedCamera {
-        self.stop().close()
+    pub fn close(self) -> Result<ClosedCamera> {
+        Ok(self.stop()?.close())
+    }
+    /// Grabs a frame from the camera.
+    /// Returns a vector of bytes representing the frame data.
+    /// Image format is selected during the camera opening.
+    pub fn grab_frame(&self) -> Result<Vec<u8>> {
+        let mut frame = vec![0u8; self.video_size as usize];
+        let mut len = 0;
+
+        unsafe {
+            let result = api::cam_grab_frame(api::MAIN_DEV, frame.as_mut_ptr(), &mut len);
+            if result < 0 {
+                return Err(Error::GrabFrameFailed(result));
+            }
+            frame.resize(len as usize, 0);
+        }
+
+        Ok(frame)
     }
 }

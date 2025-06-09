@@ -51,6 +51,7 @@ pub struct CVideoCtrl {
     pub flag: u32,
 } // C: CameraAPI.h:51, __videoCtrl
 
+// Camera API functions
 #[allow(dead_code)]
 unsafe extern "C" {
     pub(super) fn cam_enum_devices() -> i32;
@@ -61,7 +62,7 @@ unsafe extern "C" {
     pub(super) fn cam_close(dev: i32);
     pub(super) fn cam_play(dev: i32) -> i32;
     pub(super) fn cam_stop(dev: i32) -> i32;
-    pub(super) fn cam_grab_frame(dev: i32, frame: libc::c_uchar, len: i32) -> i32;
+    pub(super) fn cam_grab_frame(dev: i32, frame: *mut libc::c_uchar, len: *mut i32) -> i32;
     pub(super) fn cam_control_query(dev: i32, ctrl_id: u32, pctrl: *mut CVideoCtrl) -> i32;
     pub(super) fn cam_control_set(dev: i32, ctrl_id: u32, value: i32) -> i32;
     pub(super) fn cam_control_get(dev: i32, ctrl_id: u32, value: *mut i32) -> i32;

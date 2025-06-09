@@ -2,7 +2,7 @@ use std::ffi::{CStr, CString};
 
 use libc::c_char;
 
-use crate::camera::api::{CDevInfo, CFmtInfo, CFpsInfo, CResInfo, CVideoCtrl};
+use super::api::{CDevInfo, CFmtInfo, CFpsInfo, CResInfo, CVideoCtrl};
 
 pub type FpsInfo = CFpsInfo;
 
