@@ -16,3 +16,4 @@
 5. 数据处理服务器通过`/ws_connect`与转发服务器建立websocket连接
 6. 消息格式参考[message.rs](data-forward-server/src/message.rs)
 7. 向`/image/{id}`发送`GET`请求即可获取对应摄像头的图像
+1
