@@ -1,0 +1,48 @@
+\GetIdInfo$Id: ctex.dtx 13a2256 2024-08-30 00:00:00 +0800 Jingze You <youjingze@msn.cn> $
+  {TONGJI fonts definition by WYQY (CTEX)}
+\ProvidesExplFile{ctex-fontset-tongji.def}
+  {\ExplFileDate}{2.5.10}{\ExplFileDescription}
+
+\ctex_fontset_case:nnn
+  { \ctex_fontset_error:n { tongji } } % fail early for pdfTeX
+  { \ctex_fontset_error:n { tongji } } % fail early for upTeX
+  {  % xetex / luatex
+    \fontspec[AutoFakeBold=1.2,AutoFakeSlant]{SimHei.ttf}[Path={fonts/}]
+    \fontspec[AutoFakeBold=1.2,AutoFakeSlant]{SimSun.ttf}[Path={fonts/}]
+
+    \setmainfont{times.ttf}
+      [ Path = {fonts/}, BoldFont = timesbd.ttf, ItalicFont = timesi.ttf, BoldItalicFont = timesbi.ttf ]
+    \setCJKmainfont{SimSun.ttf}
+      [ Path = {fonts/}, BoldFont = SimHei.ttf, ItalicFont = KaiTi.ttf ]
+    
+    \setsansfont{arial.ttf}
+      [ Path = {fonts/}, BoldFont = arialbd.ttf, ItalicFont = ariali.ttf, BoldItalicFont = arialbi.ttf ]
+    \setCJKsansfont[Path={fonts/}]{ SimHei.ttf }
+
+    \setmonofont{cour.ttf}
+      [ Path = {fonts/}, BoldFont = courbd.ttf, ItalicFont = couri.ttf, BoldItalicFont = courbi.ttf ]
+    \setCJKmonofont[Path={fonts/}]{ FangSong.ttf }
+
+    \newfontfamily\pureheifamily{SimHei.ttf}[Path={fonts/}]
+    \newCJKfontfamily[purehei]\pureheiti{SimHei.ttf}[Path={fonts/}]
+    \def\phfamily{\pureheifamily\pureheiti}
+
+    \newfontfamily\puresongfamily{SimSun.ttf}[Path={fonts/}]
+    \newCJKfontfamily[puresong]\puresongti{SimSun.ttf}[Path={fonts/}]
+    \def\psfamily{\puresongfamily\puresongti}
+
+    \setCJKfamilyfont{ zhsong  }[Path={fonts/}]{ SimSun.ttf   }
+    \setCJKfamilyfont{ zhhei   }[Path={fonts/}]{ SimHei.ttf   }
+    \setCJKfamilyfont{ zhfs    }[Path={fonts/}]{ FangSong.ttf }
+    \setCJKfamilyfont{ zhkai   }[Path={fonts/}]{ KaiTi.ttf    }
+    \setCJKfamilyfont{ zhli    }[Path={fonts/}]{ LiShu.ttf    }
+    \setCJKfamilyfont{ zhyou   }[Path={fonts/}]{ SimYou.ttf   }
+    
+  }
+
+\NewDocumentCommand \songti   { } { \CJKfamily { zhsong  } }
+\NewDocumentCommand \heiti    { } { \CJKfamily { zhhei   } }
+\NewDocumentCommand \fangsong { } { \CJKfamily { zhfs    } }
+\NewDocumentCommand \kaishu   { } { \CJKfamily { zhkai   } }
+\NewDocumentCommand \lishu    { } { \CJKfamily { zhli    } }
+\NewDocumentCommand \youyuan  { } { \CJKfamily { zhyou   } }
