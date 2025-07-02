@@ -106,18 +106,9 @@ if !output.status.success() {
 }
 \end{lstlisting}
 
-\subsection{读取推理结果图片}
+\subsection{读取推理结果}
 
-C++推理程序完成后，会在当前目录生成\texttt{out.jpg}（或指定输出路径）。Rust服务器读取该图片内容：
-
-\begin{lstlisting}[language=Rust]
-use std::fs;
-
-let out_img_path = "./out.jpg";
-let img_bytes = fs::read(out_img_path)
-    .expect("failed to read output image");
-\end{lstlisting}
-
+C++推理程序完成后，将推理结果图片保存到指定路径。随后，将推理图片传输至服务端，服务端来读取图片内容。
 \subsection{HTTP路由集成}
 
 在Actix-web框架下，新增\texttt{/yolov8/\{id\}}路由，处理前端推理请求：
