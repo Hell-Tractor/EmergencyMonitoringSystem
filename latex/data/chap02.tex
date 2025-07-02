@@ -11,7 +11,7 @@ YOLOv8建立在以前YOLO版本的成功基础上， 引入了新的功能和改
     \item 选择需要标注的图像，进行标注操作(可以通过AI模型辅助标注)。
     \item 导出标注结果为YOLO格式，保存到指定目录。
 \end{enumerate}
-\subsection{yolov8-seg模型训练}
+\subsection{YOLOv8-seg模型训练}
 使用YOLOv8-seg模型进行图像分割训练，以下是训练方法：
 \begin{lstlisting}[language=bash, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, breaklines=true]
 yolo segment train model=yolov8n-seg.pt data=coco128-seg.yaml epochs=100 imgsz=640
@@ -76,58 +76,24 @@ cd lubancat_ai_manual_code/example/yolov8/yolov8_det/cpp
 \end{figure}
 
 \section{Rust服务器集成yolov8-seg推理模型}
-本项目服务器端采用Rust语言实现，负责接收前端请求、采集摄像头图片，并调用yolov8-seg C++推理模型进行分割推理，最后将推理结果图片返回给前端。由于yolov8推理模型为C++可执行文件，需在Rust服务器中实现跨语言调用与结果处理。
+本项目采用Rust服务器与图像处理服务器分离的架构。Rust服务器负责接收前端请求、采集摄像头图片，并通过WebSocket协议将图片数据发送至图像处理服务器。图像处理服务器收到图片后，调用yolov8-seg C++推理模型进行分割推理，并将处理结果通过WebSocket返回给Rust服务器，最终由Rust服务器将推理结果返回前端。
 \subsection{图片采集与保存}
-服务器通过OpenCV采集摄像头图片，并将图片以唯一id命名保存到指定路径。例如：
-\begin{lstlisting}[language=bash, breaklines=true]
-let image_path = format!("/path/to/images/{}.jpg", image_id);
-// 使用 OpenCV 采集并保存图片到 image_path
-\end{lstlisting}
+Rust服务器通过OpenCV采集摄像头图片。随后，Rust服务器将采集到的图片数据通过WebSocket发送给图像处理服务器。
+
 \subsection{配置yolov8推理可执行文件}
+图像处理服务器需配置yolov8 C++推理可执行文件及模型文件路径，例如：
 \begin{itemize}
     \item yolov8 C++推理可执行文件路径：\\
     \lstinline[breaklines=true]|/home/cat/lubancat_ai_manual_code/example/yolov8/yolov8_seg/cpp/install/rk3588_linux/rknn_yolov8_seg_demo|
     \item 模型文件路径：\\
     \lstinline[breaklines=true]|/home/cat/lubancat_ai_manual_code/example/yolov8/yolov8_seg/cpp/install/rk3588_linux/model/yolov8n-seg.rknn|
 \end{itemize}
-\subsection{Rust中调用C++可执行文件}
-Rust使用\texttt{std::process::Command}调用外部C++推理程序，传递模型路径和图片路径作为参数：
-\begin{lstlisting}[language=Rust]
-use std::process::Command;
+\subsection{数据传输}
+Rust服务器通过WebSocket与图像处理服务器通信。图像处理服务器收到图片数据后，调用C++推理程序进行处理，并将结果图片数据通过WebSocket返回。
 
-let output = Command::new(exe_path)
-    .arg(model_path)
-    .arg(&image_path)
-    .output()
-    .expect("failed to execute yolov8 seg demo");
-
-if !output.status.success() {
-    // 错误处理
-}
-\end{lstlisting}
-
-\subsection{读取推理结果}
-
-C++推理程序完成后，将推理结果图片保存到指定路径。随后，将推理图片传输至服务端，服务端来读取图片内容。
 \subsection{HTTP路由集成}
 
-在Actix-web框架下，新增\texttt{/yolov8/\{id\}}路由，处理前端推理请求：
-
-\begin{lstlisting}[language=bash, breaklines=true]
-#[get("/yolov8/{id}")]
-pub async fn yolov8_infer(
-    id: web::Path<u32>,
-) -> actix_web::Result<HttpResponse> {
-    let id = id.into_inner();
-    let image_path = format!("/path/to/images/{}.jpg", id);
-
-    // ...调用 C++ 推理和读取图片...
-
-    Ok(HttpResponse::Ok()
-        .content_type("image/jpeg")
-        .body(img_bytes))
-}
-\end{lstlisting}
+在Actix-web框架下，新增\texttt{/yolov8/\{id\}}路由，处理前端推理请求。
 
 \subsection{路由注册}
 
