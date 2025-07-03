@@ -2,3 +2,4 @@
 .proto/
 thesis*
 !thesis.tex
+*.log
